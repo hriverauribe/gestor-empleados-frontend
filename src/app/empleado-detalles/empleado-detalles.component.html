@@ -12,4 +12,22 @@
 <div>
     <label><b>Email: </b> {{empleado.email}}</label>
 </div>
+
+
 </div>
+<h3>Empleado en:</h3>
+
+<div>
+    <div>
+        <label><b>Empresa: </b> {{empleado.empresa.nombre}}</label>
+    </div>
+    <div>
+        <label><b>Dirección: </b> {{empleado.empresa.direccion + " en "+ empleado.empresa.ciudad + ", " + empleado.empresa.estado + ". CP: " + empleado.empresa.codigo_postal}}</label>
+    </div>
+    <div>
+        <label><b>Telefono: </b> {{empleado.empresa.telefono}}</label>
+    </div>
+  
+    
+    
+    </div>
