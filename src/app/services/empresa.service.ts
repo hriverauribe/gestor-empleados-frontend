@@ -13,7 +13,9 @@ export class EmpresaService {
       private httpClient: HttpClient
     ) { }
   
-    public getAllEmpresas(): Observable<any>{
-      return this.httpClient.get(this.API_SERVER);
-    }
+     //metodo para obtener todos las empresas
+  public getAllEmpresas(): Observable<any>{
+    return this.httpClient.get(this.API_SERVER);
+  }
+
   }

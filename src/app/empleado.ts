@@ -4,6 +4,7 @@ export class Empleado {
     apellido: string;
     email: string;
     empresa:{
+        id: number;
         nombre: string;
         direccion: string;
         ciudad: string;
@@ -11,5 +12,8 @@ export class Empleado {
         codigo_postal: string;
         telefono: string;
     }
+    
+ 
+  
     };
 

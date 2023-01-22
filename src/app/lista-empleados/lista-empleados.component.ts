@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import swal from 'sweetalert2';
 import { Empleado } from '../empleado';
 import { EmpleadoService } from '../empleado.service';
+import { Empresa } from '../services/empresa';
+import { EmpresaService } from '../services/empresa.service';
 
 @Component({
   selector: 'app-lista-empleados',
@@ -59,6 +61,8 @@ export class ListaEmpleadosComponent implements OnInit{
     
     )
   }
+
+  
 
   verDetallesDelEmpleado(id:number){
   this.router.navigate(['empleado-detalles',id]);

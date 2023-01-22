@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Empleado } from '../empleado';
 import { EmpleadoService } from '../empleado.service';
+import { Empresa } from '../services/empresa';
 import { EmpresaService } from '../services/empresa.service';
 
 @Component({
@@ -12,12 +13,13 @@ import { EmpresaService } from '../services/empresa.service';
 export class RegistrarEmpleadoComponent implements OnInit{
 
  
-  empresas:any;
+
   empleado : Empleado = new Empleado();
+  empresas : Empresa[];
   constructor(private empleadoServicio:EmpleadoService,private empresaService: EmpresaService,private router:Router) { }
 
   ngOnInit(): void {
-   
+    this.obtenerEmpresas();
   }
  
 
@@ -26,6 +28,7 @@ export class RegistrarEmpleadoComponent implements OnInit{
       console.log(resp);
       this.irALaListaDeEmpleados();
     },  error => { console.error(error) });
+
   }
 
   irALaListaDeEmpleados(){
@@ -35,14 +38,14 @@ export class RegistrarEmpleadoComponent implements OnInit{
    this.guardarEmpleado();
   }
 
-  obtenerEmpresas(){
-  this.empresaService.getAllEmpresas().subscribe(resp => {
-    this.empresas = resp;
-
-  },
-    error => { console.error(error) }
-  );
- 
-}
+  private obtenerEmpresas(){
+    this.empresaService.getAllEmpresas().subscribe(resp=>{
+      this.empresas = resp;  
+     // console.log(resp);
+    },
+    error=>console.error(error),
+    
+    )
+  }
 }
 

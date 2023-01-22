@@ -75,7 +75,7 @@
         <div class="form-group">
           <label>Empresa</label>
           <select name="empresa" id="empresa"  class="form-control">
-            <option [ngValue]="empresa" *ngFor="let empresa of empresas">{{empresa.nombre}</option>
+            <option [ngValue]="item" *ngFor="let item of empresas">{{item.nombre}}</option>
           </select>
       </div>
       </div>
